@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35323.107
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.API", "CritterStack.API\CritterStack.API.csproj", "{19A295CF-B83D-4248-BD13-445B5DCF0753}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsModule", "ProductsModule\ProductsModule.csproj", "{D5C6BA2E-C75A-499D-BF43-99856C8058D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{19A295CF-B83D-4248-BD13-445B5DCF0753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19A295CF-B83D-4248-BD13-445B5DCF0753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19A295CF-B83D-4248-BD13-445B5DCF0753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
