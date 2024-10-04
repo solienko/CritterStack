@@ -5,6 +5,10 @@ namespace CritterStack.API.Endpoints;
 public static class WeatherForecastEndpoint
 {
     [WolverineGet("api/weatherforecast")]
+    [Tags("Weather Forecast")]
+    [EndpointDescription("Get weather forecast for the next 5 days.")]
+    [EndpointSummary("Get weather forecast")]
+
     public static WeatherForecast[] GetWeatherForecast()
     {
         var summaries = new[] {

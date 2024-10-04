@@ -1,4 +1,4 @@
-@CritterStack.API_HostAddress = http://localhost:5106
+@CritterStack.API_HostAddress = https://localhost:7071/api
 
 GET {{CritterStack.API_HostAddress}}/weatherforecast/
 Accept: application/json

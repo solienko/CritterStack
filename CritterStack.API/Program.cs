@@ -1,8 +1,14 @@
 using Oakton;
 using Oakton.Resources;
+using ProductsModule;
 using Wolverine;
+using Wolverine.EntityFrameworkCore;
+using Wolverine.Http;
+using Wolverine.SqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Host.ApplyOaktonExtensions();
 
@@ -15,11 +21,22 @@ builder.Services.AddResourceSetupOnStartup();
 
 builder.Host.UseWolverine(options =>
 {
+    options.PersistMessagesWithSqlServer(connectionString!, "wolverine");
+    options.UseEntityFrameworkCoreTransactions();
+    options.Policies.AutoApplyTransactions();
+    options.Policies.UseDurableLocalQueues();
+
+    options.Discovery.IncludeAssembly(typeof(ProductsModuleExtension).Assembly);
+
+    if (builder.Environment.IsDevelopment())
+    {
+        options.Durability.Mode = DurabilityMode.Solo;
+    }
 });
 
-//builder.UseWolverine(options =>
-//{
-//});
+builder.Host.UseResourceSetupOnStartup();
+
+builder.Services.AddWolverineHttp();
 
 var app = builder.Build();
 
@@ -30,7 +47,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+
+app.MapWolverineEndpoints();
 
 
-app.Run();
+await app.RunOaktonCommands(args);
