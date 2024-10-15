@@ -1,12 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ProductsModule.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CritterStack.Modules.Products.Domain;
+using Microsoft.EntityFrameworkCore;
 
-namespace ProductsModule.Data;
+namespace CritterStack.Modules.Products.Database;
 
 public class ProductsDbContext : DbContext
 {
@@ -24,5 +19,7 @@ public class ProductsDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.HasDefaultSchema(DEFAULT_SCHEMA);
+
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProductsDbContext).Assembly);
     }
 }

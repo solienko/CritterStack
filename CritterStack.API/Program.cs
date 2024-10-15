@@ -1,6 +1,7 @@
+using CritterStack.Modules.Customers;
+using CritterStack.Modules.Products;
 using Oakton;
 using Oakton.Resources;
-using ProductsModule;
 using Wolverine;
 using Wolverine.EntityFrameworkCore;
 using Wolverine.Http;
@@ -19,19 +20,26 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddResourceSetupOnStartup();
 
-builder.Host.UseWolverine(options =>
+builder.Services.AddWolverine(options =>
+//builder.Host.UseWolverine(options =>
 {
+    options.Durability.Mode = DurabilityMode.Solo;
+
     options.PersistMessagesWithSqlServer(connectionString!, "wolverine");
     options.UseEntityFrameworkCoreTransactions();
     options.Policies.AutoApplyTransactions();
     options.Policies.UseDurableLocalQueues();
 
-    options.Discovery.IncludeAssembly(typeof(ProductsModuleExtension).Assembly);
-
-    if (builder.Environment.IsDevelopment())
+    options.Include<ProductsModule>(configure =>
     {
-        options.Durability.Mode = DurabilityMode.Solo;
-    }
+        configure.ConnectionString = connectionString;
+    });
+
+    options.Include<CustomersModule>(configure =>
+    {
+        configure.ConnectionString = connectionString;
+    });
+
 });
 
 builder.Host.UseResourceSetupOnStartup();
@@ -40,6 +48,8 @@ builder.Services.AddWolverineHttp();
 
 var app = builder.Build();
 
+await app.Services.ApplyAsyncWolverineExtensions();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -47,9 +57,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-app.MapWolverineEndpoints();
+app.MapWolverineEndpoints(options => 
+{ 
 
+});
 
 await app.RunOaktonCommands(args);

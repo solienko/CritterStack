@@ -5,7 +5,25 @@ VisualStudioVersion = 17.12.35323.107
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.API", "CritterStack.API\CritterStack.API.csproj", "{19A295CF-B83D-4248-BD13-445B5DCF0753}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsModule", "ProductsModule\ProductsModule.csproj", "{D5C6BA2E-C75A-499D-BF43-99856C8058D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.Common", "CritterStack.Common\CritterStack.Common.csproj", "{1D08EE6C-E35B-47C8-A124-A8DEA3BD5F7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.Marten.API", "CritterStack.Marten.API\CritterStack.Marten.API.csproj", "{5B52F196-EB28-442A-818F-F82D8890D27A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{265D747C-0C46-4333-A348-E12DEBE167FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Products", "Products", "{3BF45809-8070-490B-A926-86450ED4D893}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customers", "Customers", "{AAE52FD2-616B-40F0-9861-0E2C269542EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orders", "Orders", "{E81D07A7-22B3-47BF-BE7A-9A22573EC167}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.Modules.Products.Contracts", "Modules\Products\CritterStack.Modules.Products.Contracts\CritterStack.Modules.Products.Contracts.csproj", "{28ACA053-DB77-42A5-A949-543393CB45B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.Modules.Customers.Contracts", "Modules\Customers\CritterStack.Modules.Customers.Contracts\CritterStack.Modules.Customers.Contracts.csproj", "{C5F2E567-2CFF-41D8-8133-0A8E9187019E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.Modules.Products", "Modules\Products\CritterStack.Modules.Products\CritterStack.Modules.Products.csproj", "{785E5FFC-E13C-45C9-BAD0-9203B3DCF342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterStack.Modules.Customers", "Modules\Customers\CritterStack.Modules.Customers\CritterStack.Modules.Customers.csproj", "{94A1B869-3DBD-4571-914F-F584AFE0CC07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +35,42 @@ Global
 		{19A295CF-B83D-4248-BD13-445B5DCF0753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19A295CF-B83D-4248-BD13-445B5DCF0753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19A295CF-B83D-4248-BD13-445B5DCF0753}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5C6BA2E-C75A-499D-BF43-99856C8058D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D08EE6C-E35B-47C8-A124-A8DEA3BD5F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D08EE6C-E35B-47C8-A124-A8DEA3BD5F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D08EE6C-E35B-47C8-A124-A8DEA3BD5F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D08EE6C-E35B-47C8-A124-A8DEA3BD5F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B52F196-EB28-442A-818F-F82D8890D27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B52F196-EB28-442A-818F-F82D8890D27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B52F196-EB28-442A-818F-F82D8890D27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B52F196-EB28-442A-818F-F82D8890D27A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28ACA053-DB77-42A5-A949-543393CB45B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28ACA053-DB77-42A5-A949-543393CB45B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28ACA053-DB77-42A5-A949-543393CB45B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28ACA053-DB77-42A5-A949-543393CB45B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F2E567-2CFF-41D8-8133-0A8E9187019E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F2E567-2CFF-41D8-8133-0A8E9187019E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F2E567-2CFF-41D8-8133-0A8E9187019E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F2E567-2CFF-41D8-8133-0A8E9187019E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785E5FFC-E13C-45C9-BAD0-9203B3DCF342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785E5FFC-E13C-45C9-BAD0-9203B3DCF342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785E5FFC-E13C-45C9-BAD0-9203B3DCF342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785E5FFC-E13C-45C9-BAD0-9203B3DCF342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A1B869-3DBD-4571-914F-F584AFE0CC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A1B869-3DBD-4571-914F-F584AFE0CC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A1B869-3DBD-4571-914F-F584AFE0CC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A1B869-3DBD-4571-914F-F584AFE0CC07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3BF45809-8070-490B-A926-86450ED4D893} = {265D747C-0C46-4333-A348-E12DEBE167FA}
+		{AAE52FD2-616B-40F0-9861-0E2C269542EA} = {265D747C-0C46-4333-A348-E12DEBE167FA}
+		{E81D07A7-22B3-47BF-BE7A-9A22573EC167} = {265D747C-0C46-4333-A348-E12DEBE167FA}
+		{28ACA053-DB77-42A5-A949-543393CB45B2} = {3BF45809-8070-490B-A926-86450ED4D893}
+		{C5F2E567-2CFF-41D8-8133-0A8E9187019E} = {AAE52FD2-616B-40F0-9861-0E2C269542EA}
+		{785E5FFC-E13C-45C9-BAD0-9203B3DCF342} = {3BF45809-8070-490B-A926-86450ED4D893}
+		{94A1B869-3DBD-4571-914F-F584AFE0CC07} = {AAE52FD2-616B-40F0-9861-0E2C269542EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0DC9B93-5354-4E2F-9B43-91A1A4B13E13}

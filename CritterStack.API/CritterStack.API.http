@@ -1,6 +1,22 @@
 @CritterStack.API_HostAddress = https://localhost:7071/api
 
-GET {{CritterStack.API_HostAddress}}/weatherforecast/
+GET {{CritterStack.API_HostAddress}}/products/
 Accept: application/json
+
+###
+
+POST {{CritterStack.API_HostAddress}}/products/
+Content-Type: application/json
+
+{
+  "id": "4A6121A5-A27C-40BD-9818-CF5626AD733F",
+  "name": "Test Product",
+  "price": 10.55,
+  "stock": 1000
+}
+
+###
+
+DELETE {{CritterStack.API_HostAddress}}/products/4a6121a5-a27c-40bd-9818-cf5626ad733f
 
 ###
