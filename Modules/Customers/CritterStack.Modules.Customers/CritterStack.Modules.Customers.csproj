@@ -16,9 +16,9 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="WolverineFx.EntityFrameworkCore" Version="3.0.0" />
-		<PackageReference Include="WolverineFx.Http" Version="3.0.0" />
-		<PackageReference Include="WolverineFx.SqlServer" Version="3.0.0" />
+		<PackageReference Include="WolverineFx.EntityFrameworkCore" Version="3.0.1" />
+		<PackageReference Include="WolverineFx.Http" Version="3.0.1" />
+		<PackageReference Include="WolverineFx.SqlServer" Version="3.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
